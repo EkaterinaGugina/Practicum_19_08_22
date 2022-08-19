@@ -3,7 +3,7 @@
 
 void FillArray (int[] arr)           //задание массива случ. числами и вывод их на экран в квадр.скоб. через ","
 {
-    Console.Write();
+    Console.WriteLine();
     Console.Write("[");
     int length = arr.Length - 1;
     for (int i =0; i < length; i++)
@@ -16,7 +16,7 @@ void FillArray (int[] arr)           //задание массива случ. �
 }
 void SumNotMod2(int[] arr)                       // Подсчет суммы элементов, стоящих на нечётных позициях в массиве
 {
-    Console.Write();
+    Console.WriteLine();
     int sum = 0;
     for (int i = 1; i < arr.Length; i+=2)
     {
