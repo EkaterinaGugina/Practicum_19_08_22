@@ -1,24 +1,35 @@
 ﻿// Задайте массив вещественных чисел. Найдите разницу между макс. и мин. элементами массива.
 // [3 7 22 2 78] -> 76
 
-void FillArray (double[] arr)           //задание массива c консоли и вывод их на экран
+double[] FillArray (double[] arr)           //задание массива c консоли  
 {    
     Console.WriteLine("Введите элементы массива через Enter");
     int length = arr.Length;
     for (int i = 0; i < length; i++)
     {
         arr[i] = Convert.ToDouble(Console.ReadLine());
-        Console.Write($"{arr[i]},  ");
     }
+    return arr;
 }
-void DiffMinMax(double[] arr)                       // Подсчет разности максимального и минимального элементов массива
+
+void PrintArray (double[] arr)              //вывод на экран в квадр.скоб. через ","
 {
-    Console.WriteLine();
+    Console.Write("[");
+    int length = arr.Length - 1;
+    for (int i =0; i < length; i++)
+    {
+        Console.Write($"{arr[i]};  ");
+    }
+    Console.WriteLine($"{arr[length]}]");
+}
+
+double DiffMinMax(double[] arr)               // Подсчет разности максимального и минимального элементов массива
+{
     int N = arr.Length - 1;
     for (int i = 0; i < N; i++)
     {
         int position_min = i;
-        for (int j = i + 1; i < arr.Length; i++)
+        for (int j = i + 1; j < arr.Length; j++)
         {
             if (arr[j] < arr[position_min])
                 {
@@ -29,10 +40,12 @@ void DiffMinMax(double[] arr)                       // Подсчет разно
         arr[i] = arr[position_min];
         arr[position_min] = min;
     }
-    return (arr[length] - arr[0]);
+    PrintArray(arr);
+    return (arr[N] - arr[0]);
 }
 Console.Write("Введите размер массива, size = ");
 int size = Convert.ToInt32(Console.ReadLine());
 double[] arr38 = new double[size];
-FillArray(arr36);
-SumNotMod2(arr36);
+double[] array38 = FillArray(arr38);
+double diff_min_max = DiffMinMax(arr38);
+Console.WriteLine($"Разность между минимальным и максимальными значениями массива равна = {diff_min_max}");
