@@ -19,6 +19,7 @@ void FillArray (int[] arr)           //задание массива случ. �
 
 void SumMinusPlus(int[] arr)                       // Подсчет чётных чисел в массиве
 {
+    Console.WriteLine();
     int sum_minus = 0;
     int sum_plus = 0;
     for (int i = 0; i < arr.Length; i++)
@@ -31,4 +32,5 @@ void SumMinusPlus(int[] arr)                       // Подсчет чётны�
 
 int[] arr31 = new int[12];
 FillArray(arr31);
+Console.WriteLine();
 SumMinusPlus(arr31);
